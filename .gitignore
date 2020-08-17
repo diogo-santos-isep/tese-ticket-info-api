@@ -8,3 +8,8 @@
 /src/Presentation.API/.vs/ticket-info-service/DesignTimeBuild
 /src/Presentation.API/bin/Debug/netcoreapp3.1
 /src/Presentation.API/obj
+/src/BLL.Services/bin/Debug/netstandard2.0
+/src/DAL.Repositories/bin/Debug/netstandard2.0
+/src/Infrastructure.CrossCutting/bin/Debug/netstandard2.0
+/src/Infrastructure.CrossCutting/obj
+/src/Models.Domain/bin/Debug/netstandard2.0
