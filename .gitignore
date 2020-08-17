@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/BLL.Services/obj
+/src/DAL.Repositories/obj
+/src/Models.Domain/obj
+/src/Presentation.API/.vs/ticket-info-service/DesignTimeBuild
+/src/Presentation.API/bin/Debug/netcoreapp3.1
+/src/Presentation.API/obj
