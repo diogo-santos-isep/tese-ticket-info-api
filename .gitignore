@@ -13,3 +13,7 @@
 /src/Infrastructure.CrossCutting/bin/Debug/netstandard2.0
 /src/Infrastructure.CrossCutting/obj
 /src/Models.Domain/bin/Debug/netstandard2.0
+/.vs/ticket-info-service
+/tests/Tests.Integration/bin/Debug/netcoreapp3.1
+/tests/Tests.Integration/obj/Debug/netcoreapp3.1
+/tests/Tests.Integration/obj

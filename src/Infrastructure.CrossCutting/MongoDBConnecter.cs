@@ -1,4 +1,4 @@
-﻿namespace Presentation.API.Helpers
+﻿namespace Infrastructure.CrossCutting
 {
     using Infrastructure.CrossCutting.Settings.Interfaces;
     using MongoDB.Driver;
