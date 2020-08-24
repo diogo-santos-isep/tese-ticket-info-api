@@ -1,16 +1,15 @@
 ﻿namespace Tests.Integration.Helpers
 {
     using Infrastructure.CrossCutting.Settings.Implementations;
-    using Infrastructure.CrossCutting.Settings.Interfaces;
     using Microsoft.Extensions.Configuration;
     using System;
 
     public class Configurations
     {
         public static Configurations Current { get; private set; }
-        public IMongoDBConnection MongoDBConnection { get; }
+        public MongoDBConnection MongoDBConnection { get; }
 
-        public Configurations(IMongoDBConnection mongoDbConnection)
+        public Configurations(MongoDBConnection mongoDbConnection)
         {
             this.MongoDBConnection = mongoDbConnection ?? throw new Exception("Connection is null");
         }

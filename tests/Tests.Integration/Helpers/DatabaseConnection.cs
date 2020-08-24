@@ -1,7 +1,6 @@
 ﻿using Infrastructure.CrossCutting;
-using Infrastructure.CrossCutting.Settings.Interfaces;
+using Infrastructure.CrossCutting.Settings.Implementations;
 using MongoDB.Driver;
-using System.Runtime.CompilerServices;
 
 namespace Tests.Integration.Helpers
 {
@@ -15,7 +14,7 @@ namespace Tests.Integration.Helpers
             this.Database = mongoDatabase;
         }
 
-        public static void Init(IMongoDBConnection connectionSettings)
+        public static void Init(MongoDBConnection connectionSettings)
         {
             Current = new DatabaseConnection(MongoDBConnecter.Connect(connectionSettings));
         }

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DAL.RabbitMQ.Producers\DAL.RabbitMQ.Producers.csproj" />
     <ProjectReference Include="..\DAL.Repositories\DAL.Repositories.csproj" />
     <ProjectReference Include="..\Models.Domain\Models.Domain.csproj" />
   </ItemGroup>

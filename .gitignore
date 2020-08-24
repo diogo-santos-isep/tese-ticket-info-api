@@ -17,3 +17,5 @@
 /tests/Tests.Integration/bin/Debug/netcoreapp3.1
 /tests/Tests.Integration/obj/Debug/netcoreapp3.1
 /tests/Tests.Integration/obj
+/src/DAL.RabbitMQ.Producers/bin/Debug/netstandard2.0
+/src/DAL.RabbitMQ.Producers/obj

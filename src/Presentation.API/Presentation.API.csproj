@@ -18,12 +18,22 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BLL.Services\BLL.Services.csproj" />
+    <ProjectReference Include="..\DAL.RabbitMQ.Producers\DAL.RabbitMQ.Producers.csproj" />
     <ProjectReference Include="..\DAL.Repositories\DAL.Repositories.csproj" />
     <ProjectReference Include="..\Infrastructure.CrossCutting\Infrastructure.CrossCutting.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Helpers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.Development.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 

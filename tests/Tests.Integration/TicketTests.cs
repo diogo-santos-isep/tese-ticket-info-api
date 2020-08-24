@@ -2,9 +2,11 @@ namespace Tests.Integration
 {
     using AutoFixture;
     using BLL.Services.Implementations;
+    using DAL.RabbitMQ.Producers.Interfaces;
     using DAL.Repositories.Implementations;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Models.Domain.Models;
+    using Moq;
     using System;
     using System.Linq;
     using Tests.Integration.Helpers;
@@ -14,11 +16,12 @@ namespace Tests.Integration
     {
         private TicketService _service;
         private Fixture fixture = new Fixture();
+        private Mock<ITicketStateChangedProducer> ticketStateChangedProducerMock = new Mock<ITicketStateChangedProducer>();
 
         public TicketTests()
         {
             var repo = new TicketRepository(DatabaseConnection.Current.Database);
-            this._service = new TicketService(repo);
+            this._service = new TicketService(repo, ticketStateChangedProducerMock.Object);
         }
 
         [TestMethod()]
