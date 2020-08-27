@@ -6,7 +6,9 @@
     using DAL.RabbitMQ.Producers.Interfaces;
     using global::RabbitMQ.Client;
     using Infrastructure.CrossCutting.Settings.Implementations;
+    using Newtonsoft.Json;
     using System;
+    using System.Text;
     using System.Threading.Tasks;
 
     public class TicketStateChangedProducer : ITicketStateChangedProducer
@@ -32,7 +34,7 @@
                                          autoDelete: false,
                                          arguments: null);
 
-                    var body = Converter.ToByteArray(message);
+                    byte[] body = Encoding.Default.GetBytes(JsonConvert.SerializeObject(message));
 
                     channel.BasicPublish(exchange: "",
                                          routingKey: QUEUENAME,
