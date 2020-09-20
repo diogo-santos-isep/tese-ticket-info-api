@@ -1,9 +1,9 @@
-﻿using DAL.RabbitMQ.Producers.Bodies;
+﻿using BLL.RabbitMQ.Producers.Bodies;
 using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace DAL.RabbitMQ.Producers.Helpers
+namespace BLL.RabbitMQ.Producers.Helpers
 {
     public static class Converter
     {

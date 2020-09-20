@@ -8,6 +8,7 @@
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
             services.AddScoped<ITicketService, TicketService>();
+            services.AddScoped<ITicketReassignService, TicketReassignService>();
 
             return services;
         }

@@ -1,9 +1,9 @@
-﻿namespace DAL.RabbitMQ.Producers.Implementations
+﻿namespace BLL.RabbitMQ.Producers.Implementations
 {
-    using DAL.RabbitMQ.Producers.Bodies;
-    using DAL.RabbitMQ.Producers.Extensions;
-    using DAL.RabbitMQ.Producers.Helpers;
-    using DAL.RabbitMQ.Producers.Interfaces;
+    using BLL.RabbitMQ.Producers.Bodies;
+    using BLL.RabbitMQ.Producers.Extensions;
+    using BLL.RabbitMQ.Producers.Helpers;
+    using BLL.RabbitMQ.Producers.Interfaces;
     using global::RabbitMQ.Client;
     using Infrastructure.CrossCutting.Settings.Implementations;
     using Newtonsoft.Json;
@@ -11,17 +11,17 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public class TicketStateChangedProducer : ITicketStateChangedProducer
+    public class TicketReassignedEventProducer : ITicketReassignedEventProducer
     {
-        private readonly string QUEUENAME = "TicketStateChangedQueue";
+        private readonly string QUEUENAME = "TicketReassignedQueue";
         private IConnectionFactory factory;
 
-        public TicketStateChangedProducer(RabbitMQSettings settings)
+        public TicketReassignedEventProducer(RabbitMQSettings settings)
         {
             this.factory = settings.ToFactory();
         }
 
-        public async Task Produce(TicketStateChangedBody message)
+        public async Task Produce(TicketReassignedEventBody message)
         {
             try
             {
@@ -41,12 +41,12 @@
                                          basicProperties: null,
                                          body: body);
 
-                    Console.WriteLine($"TicketStateChanged Message published with success!");
+                    Console.WriteLine($"TicketReassignedEvent Message published with success!");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Something Went Wrong! {ex.Message}");
+                Console.WriteLine($"Something Went Wrong Publishing TicketReassignedEvent! {ex.Message}");
             }
         }
     }

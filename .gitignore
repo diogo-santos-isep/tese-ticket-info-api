@@ -19,3 +19,13 @@
 /tests/Tests.Integration/obj
 /src/DAL.RabbitMQ.Producers/bin/Debug/netstandard2.0
 /src/DAL.RabbitMQ.Producers/obj
+/src/BLL.RabbitMQ.Producers/bin/Debug/netstandard2.0
+/src/BLL.RabbitMQ.Producers/obj/Debug/netstandard2.0
+/src/BLL.RabbitMQ.Producers/obj
+/src/DAL.Clients/bin/Debug/netstandard2.0
+/src/DAL.Clients/obj
+/src/Models.DTO/bin/Debug/netstandard2.0
+/src/Models.DTO/obj
+/src/Models.Filters/obj
+/src/Models.Filters/bin/Debug/netstandard2.0
+/src/Models.ViewModels/obj

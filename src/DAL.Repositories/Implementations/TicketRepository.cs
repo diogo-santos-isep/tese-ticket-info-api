@@ -1,8 +1,12 @@
 ﻿namespace DAL.Repositories.Implementations
 {
+    using DAL.Repositories.Extensions;
     using DAL.Repositories.Interfaces;
     using Models.Domain.Models;
+    using Models.Filters;
+    using MongoDB.Bson;
     using MongoDB.Driver;
+    using System;
     using System.Collections.Generic;
 
     public class TicketRepository : ITicketRepository
@@ -31,5 +35,21 @@
 
         public void Update(string id, Ticket model) =>
             _collection.ReplaceOne(book => book.Id == id, model);
+        public List<Ticket> Search(TicketFilter filter)
+        {
+            var filters = filter.BuildFilters();
+            var sort = filter.BuildSort<Ticket>();
+            return _collection
+                    .Find(filters)
+                    .Sort(sort)
+                    .Skip((filter.Page - 1) * filter.PageSize)
+                    .Limit(filter.PageSize)
+                    .ToList();
+        }
+
+        public long Count(TicketFilter filter)
+            =>
+                _collection
+                    .CountDocuments(filter.BuildFilters());
     }
 }

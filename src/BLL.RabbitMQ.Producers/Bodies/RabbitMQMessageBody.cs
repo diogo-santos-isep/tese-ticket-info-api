@@ -1,7 +1,6 @@
-﻿using System;
-
-namespace DAL.RabbitMQ.Producers.Bodies
+﻿namespace BLL.RabbitMQ.Producers.Bodies
 {
+    using System;
     [Serializable]
     public abstract class RabbitMQMessageBody
     {

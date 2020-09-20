@@ -1,6 +1,6 @@
-﻿namespace DAL.RabbitMQ.Producers.Interfaces
+﻿namespace BLL.RabbitMQ.Producers.Interfaces
 {
-    using DAL.RabbitMQ.Producers.Bodies;
+    using BLL.RabbitMQ.Producers.Bodies;
     using System.Threading.Tasks;
 
     public interface IRabbitMQProducer<T> where T:RabbitMQMessageBody

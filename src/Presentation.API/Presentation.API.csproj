@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.8" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="3.1.7" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
@@ -18,9 +19,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BLL.Services\BLL.Services.csproj" />
-    <ProjectReference Include="..\DAL.RabbitMQ.Producers\DAL.RabbitMQ.Producers.csproj" />
     <ProjectReference Include="..\DAL.Repositories\DAL.Repositories.csproj" />
     <ProjectReference Include="..\Infrastructure.CrossCutting\Infrastructure.CrossCutting.csproj" />
+    <ProjectReference Include="..\Models.DTO\Models.DTO.csproj" />
   </ItemGroup>
 
   <ItemGroup>
