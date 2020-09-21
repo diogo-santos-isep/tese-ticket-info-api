@@ -22,6 +22,7 @@
         {
             try
             {
+                _logger.LogInformation($"Request: {httpContext.Request.Path}");
                 await _next(httpContext);
             }
             catch (Exception ex)

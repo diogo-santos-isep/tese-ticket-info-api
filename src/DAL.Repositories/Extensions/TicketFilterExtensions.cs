@@ -5,6 +5,7 @@
     using MongoDB.Driver;
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     public static class TicketFilterExtensions
     {
@@ -15,6 +16,10 @@
                 arr.Add(Builders<Ticket>.Filter.Eq(x => x.ClientId, filter.ClientId));
             if (!String.IsNullOrEmpty(filter.CollaboratorId))
                 arr.Add(Builders<Ticket>.Filter.Eq(x => x.CollaboratorId, filter.CollaboratorId));
+            if(filter.States != null && filter.States.Count()>0)
+                arr.Add(Builders<Ticket>.Filter.In(x => x.State, filter.States));
+            if(filter.Priority.HasValue && filter.Priority.Value> 0)
+                arr.Add(Builders<Ticket>.Filter.Eq(x => x.Priority, filter.Priority));
             if (arr.Count == 0)
                 arr.Add(Builders<Ticket>.Filter.Empty);
             return Builders<Ticket>.Filter.And(arr);
