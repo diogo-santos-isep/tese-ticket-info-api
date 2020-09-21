@@ -100,5 +100,9 @@
                 Description = message.Substring(0,100)
             };
         }
+        public Ticket ForClient()
+        {
+            return this;
+        }
     }
 }

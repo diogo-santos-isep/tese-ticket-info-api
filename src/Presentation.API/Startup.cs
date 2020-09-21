@@ -7,8 +7,10 @@ namespace Presentation.API
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Microsoft.Extensions.Logging;
     using Microsoft.IdentityModel.Tokens;
     using Presentation.API.Components;
+    using Presentation.API.Handlers;
 
     public class Startup
     {
@@ -27,6 +29,12 @@ namespace Presentation.API
                 .AddServices()
                 .AddClients()
                 .AddRabbitMQProducers();
+
+            services.AddLogging(logging =>
+            {
+                logging.AddConsole();
+                logging.AddDebug();
+            });
 
             services.AddAuthentication("Bearer")
             .AddJwtBearer("Bearer", options =>
@@ -56,6 +64,7 @@ namespace Presentation.API
             }
 
             app.UseHttpsRedirection();
+            app.UseMiddleware<GlobalExceptionMiddleware>();
 
             app.UseRouting();
             app.UseCors("MyPolicy");

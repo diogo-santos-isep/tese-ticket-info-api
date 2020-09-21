@@ -29,11 +29,18 @@
         }
 
         [HttpPost("/api/client/{clientId}/ticket/search")]
-        [ScopeAndRoleAuthorization(Scopes.TicketClientListScope)]
+        [ScopeAndRoleAuthorization(Scopes.TicketClientScope)]
         public ActionResult<TicketClientVMGrid> Search([FromRoute]string clientId,TicketFilter filter)
         {
             filter.ClientId = clientId;
             return this._service.SearchForClient(filter);
+        }
+
+        [HttpGet("/api/client/{clientId}/ticket/{id}")]
+        [ScopeAndRoleAuthorization(Scopes.TicketClientScope)]
+        public ActionResult<Ticket> GetForClient(string id)
+        {
+            return this._service.Get(id).ForClient();
         }
 
         [HttpGet("{id}")]
