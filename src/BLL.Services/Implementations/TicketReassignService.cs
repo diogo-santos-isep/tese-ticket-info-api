@@ -32,24 +32,44 @@
             this._ticketReassignedEventProducer = ticketReassignedEventProducer;
             this._stateChangedProducer = stateChangedProducer;
         }
-        public async Task AssignTicket(Ticket model)
+
+        public async Task AssignTicket(Ticket model, Department department, User collaborator)
         {
             try
             {
-                var isAssigned = model.State == ETicketState.Assigned;
-                var defaultDepartment = await this._departmentClient.GetDefaultDepartment().ConfigureAwait(false);
-                var collaborators = await this._userClient.GetCollaboratorsFromDepartment(defaultDepartment).ConfigureAwait(false);
-
-                var collaborator = GetMostFreeCollaborator(collaborators);
                 if (collaborator == null)
-                    return;
+                    collaborator = await this.GetCollaboratorFromDepartment(department).ConfigureAwait(false)
+                        ?? throw new Exception("No Collaborator found");
+                var isAssigned = model.State == ETicketState.Assigned;
                 model = model.AssignCollaborator(collaborator);
                 this._ticketRepository.Update(model.Id, model);
                 _ = this._ticketReassignedEventProducer.Produce(TicketReassignedEventBody.BuildMessage(model));
                 if (!isAssigned)
                     _ = this._stateChangedProducer.Produce(TicketStateChangedEventBody.BuildMessage(model));
             }
-            catch(Exception ex)
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ocorreu um erro ao atribuir o ticket: {ex.Message}");
+                throw;
+            }
+        }
+
+        private async Task<User> GetCollaboratorFromDepartment(Department department)
+        {
+            var collaborators = await this._userClient.GetCollaboratorsFromDepartment(department).ConfigureAwait(false);
+
+            var collaborator = GetMostFreeCollaborator(collaborators);
+            return collaborator;
+        }
+
+        public async Task AssignTicket(Ticket model)
+        {
+            try
+            {
+                var defaultDepartment = await this._departmentClient.GetDefaultDepartment().ConfigureAwait(false);
+                await this.AssignTicket(model, defaultDepartment, await GetCollaboratorFromDepartment(defaultDepartment).ConfigureAwait(false)).ConfigureAwait(false);
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine($"Ocorreu um erro ao atribuir o ticket: {ex.Message}");
                 throw;
@@ -58,11 +78,12 @@
 
         public User GetMostFreeCollaborator(IEnumerable<User> collaborators)
         {
-            var tuples = collaborators.Select(c => {
+            var tuples = collaborators.Select(c =>
+            {
                 var tickets = this._ticketRepository.Search(new TicketFilter { CollaboratorId = c.Id });
                 var score = tickets.GetScore();
                 return new Tuple<User, decimal>(c, score);
-            }).OrderBy(t=>t.Item2);
+            }).OrderBy(t => t.Item2);
 
             return tuples.First()?.Item1;
         }

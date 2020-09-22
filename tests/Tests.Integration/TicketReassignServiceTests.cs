@@ -50,6 +50,52 @@
             this.userClientMock.Setup(x => x.GetCollaboratorsFromDepartment(It.IsAny<Department>())).ReturnsAsync(new List<User> { collaborator });
 
             await this._service.AssignTicket(ticket1).ConfigureAwait(false);
+            this.departmentClientMock.Verify(x => x.GetDefaultDepartment(), Times.Once);
+            this.ticketReassignedEventProducerMock.Verify(x => x.Produce(It.IsAny<TicketReassignedEventBody>()), Times.Once);
+            this.ticketStateChangedEventProducerMock.Verify(x => x.Produce(It.IsAny<TicketStateChangedEventBody>()), Times.Once);
+
+            var updatedTicket = this._ticketService.Get(ticket1.Id);
+            Assert.AreEqual(collaborator.Id, updatedTicket.CollaboratorId, "Collaborator is not the same");
+            Assert.AreEqual(collaborator.Name, updatedTicket.CollaboratorName, "Collaborator is not the same");
+            Assert.AreEqual(collaborator.Department_Id, updatedTicket.DepartmentId, "Department is not the same");
+            Assert.AreEqual(collaborator.Department_Description, updatedTicket.DepartmentDescription, "Collaborator is not the same");
+        }
+
+        [TestMethod]
+        public async Task AssignTicket_WithOnlyDepartment_Success()
+        {
+            var ticket1 = this.fixture.GenerateTicket();
+            ticket1.State = ETicketState.Created;
+            ticket1 = this._ticketService.Create(ticket1);
+            var department = this.fixture.GenerateDepartment();
+
+            var collaborator = this.fixture.GenerateUser();
+            this.userClientMock.Setup(x => x.GetCollaboratorsFromDepartment(department)).ReturnsAsync(new List<User> { collaborator });
+
+            await this._service.AssignTicket(ticket1,department,null).ConfigureAwait(false);
+            this.userClientMock.Verify(x => x.GetCollaboratorsFromDepartment(department), Times.Once);
+            this.ticketReassignedEventProducerMock.Verify(x => x.Produce(It.IsAny<TicketReassignedEventBody>()), Times.Once);
+            this.ticketStateChangedEventProducerMock.Verify(x => x.Produce(It.IsAny<TicketStateChangedEventBody>()), Times.Once);
+
+            var updatedTicket = this._ticketService.Get(ticket1.Id);
+            Assert.AreEqual(collaborator.Id, updatedTicket.CollaboratorId, "Collaborator is not the same");
+            Assert.AreEqual(collaborator.Name, updatedTicket.CollaboratorName, "Collaborator is not the same");
+            Assert.AreEqual(collaborator.Department_Id, updatedTicket.DepartmentId, "Department is not the same");
+            Assert.AreEqual(collaborator.Department_Description, updatedTicket.DepartmentDescription, "Collaborator is not the same");
+        }
+
+        [TestMethod]
+        public async Task AssignTicket_DepartmentAndCollaborator_Success()
+        {
+            var ticket1 = this.fixture.GenerateTicket();
+            ticket1.State = ETicketState.Created;
+            ticket1 = this._ticketService.Create(ticket1);
+            var department = this.fixture.GenerateDepartment();
+
+            var collaborator = this.fixture.GenerateUser();
+
+            await this._service.AssignTicket(ticket1, department, collaborator).ConfigureAwait(false);
+            this.userClientMock.Verify(x => x.GetCollaboratorsFromDepartment(It.IsAny<Department>()), Times.Never);
             this.ticketReassignedEventProducerMock.Verify(x => x.Produce(It.IsAny<TicketReassignedEventBody>()), Times.Once);
             this.ticketStateChangedEventProducerMock.Verify(x => x.Produce(It.IsAny<TicketStateChangedEventBody>()), Times.Once);
 

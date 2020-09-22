@@ -23,6 +23,12 @@
                 .With(t => t.ClientId, ObjectId.GenerateNewId().ToString())
                 .Create();
         }
+        public static Department GenerateDepartment(this Fixture fixture)
+        {
+            return fixture.Build<Department>()
+                .Without(t => t.Id)
+                .Create();
+        }
 
     }
 }
