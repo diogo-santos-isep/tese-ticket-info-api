@@ -24,11 +24,13 @@ namespace Tests.Integration
         private Mock<ITicketStateChangedEventProducer> ticketStateChangedProducerMock = new Mock<ITicketStateChangedEventProducer>();
         private Mock<ITicketCreatedEventProducer> ticketCreatedProducerMock = new Mock<ITicketCreatedEventProducer>();
         private Mock<ITicketReassignService> ticketReassignServiceMock = new Mock<ITicketReassignService>();
+        private Mock<ITicketFieldsUpdatedEventProducer> ticketFieldsUpdatedServiceMock = new Mock<ITicketFieldsUpdatedEventProducer>();
 
         public TicketTests()
         {
             var repo = new TicketRepository(DatabaseConnection.Current.Database);
-            this._service = new TicketService(repo, ticketStateChangedProducerMock.Object, ticketReassignServiceMock.Object, ticketCreatedProducerMock.Object);
+            this._service = new TicketService(repo, ticketStateChangedProducerMock.Object, ticketReassignServiceMock.Object
+                , ticketCreatedProducerMock.Object, ticketFieldsUpdatedServiceMock.Object);
         }
 
         [TestMethod()]
@@ -186,6 +188,7 @@ namespace Tests.Integration
             newTicket.Description += "wlelele";
             this._service.Update(newTicket.Id, newTicket);
             ticketStateChangedProducerMock.Verify(x => x.Produce(It.IsAny<TicketStateChangedEventBody>()), Times.Never);
+            ticketFieldsUpdatedServiceMock.Verify(x => x.Produce(It.IsAny<TicketFieldsUpdatedEventBody>()), Times.Once);
 
             var savedTicket = this._service.Get(newTicket.Id);
             Assert.AreEqual(savedTicket.Description, newTicket.Description, "Tickets are different");

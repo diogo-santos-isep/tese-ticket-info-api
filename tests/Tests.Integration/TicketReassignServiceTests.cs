@@ -28,13 +28,15 @@
 
         private Mock<ITicketCreatedEventProducer> ticketCreatedProducerMock = new Mock<ITicketCreatedEventProducer>();
         private Mock<ITicketReassignService> ticketReassignServiceMock = new Mock<ITicketReassignService>();
+        private Mock<ITicketFieldsUpdatedEventProducer> ticketFieldsUpdatedServiceMock = new Mock<ITicketFieldsUpdatedEventProducer>();
 
         public TicketReassignServiceTests()
         {
             var repo = new TicketRepository(DatabaseConnection.Current.Database);
             this._service = new TicketReassignService(departmentClientMock.Object, userClientMock.Object, repo
                 , ticketReassignedEventProducerMock.Object, ticketStateChangedEventProducerMock.Object);
-            this._ticketService = new TicketService(repo, ticketStateChangedEventProducerMock.Object, ticketReassignServiceMock.Object, ticketCreatedProducerMock.Object);
+            this._ticketService = new TicketService(repo, ticketStateChangedEventProducerMock.Object, ticketReassignServiceMock.Object
+                , ticketCreatedProducerMock.Object, ticketFieldsUpdatedServiceMock.Object);
         }
 
         [TestMethod]

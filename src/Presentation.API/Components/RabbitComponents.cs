@@ -13,6 +13,7 @@
             services.AddScoped<ITicketStateChangedEventProducer>(p => new TicketStateChangedEventProducer(p.GetService<IOptions<RabbitMQSettings>>().Value));
             services.AddScoped<ITicketCreatedEventProducer>(p => new TicketCreatedEventProducer(p.GetService<IOptions<RabbitMQSettings>>().Value));
             services.AddScoped<ITicketReassignedEventProducer>(p => new TicketReassignedEventProducer(p.GetService<IOptions<RabbitMQSettings>>().Value));
+            services.AddScoped<ITicketFieldsUpdatedEventProducer>(p => new TicketFieldsUpdatedEventProducer(p.GetService<IOptions<RabbitMQSettings>>().Value));
 
             return services;
         }

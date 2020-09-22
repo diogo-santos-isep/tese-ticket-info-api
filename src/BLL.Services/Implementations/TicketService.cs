@@ -2,6 +2,7 @@
 {
     using BLL.RabbitMQ.Producers.Bodies;
     using BLL.RabbitMQ.Producers.Interfaces;
+    using BLL.Services.Extensions;
     using BLL.Services.Interfaces;
     using DAL.Repositories.Interfaces;
     using Models.Domain.Enums;
@@ -18,14 +19,16 @@
         private ITicketReassignService _reassignService;
         private ITicketStateChangedEventProducer _stateChangedProducer;
         private ITicketCreatedEventProducer _ticketCreatedEventProducer;
+        private ITicketFieldsUpdatedEventProducer _ticketFieldsUpdatedProducer;
 
         public TicketService(ITicketRepository _repo, ITicketStateChangedEventProducer stateChangedProducer,
-            ITicketReassignService reassignService, ITicketCreatedEventProducer ticketCreatedEventProducer)
+            ITicketReassignService reassignService, ITicketCreatedEventProducer ticketCreatedEventProducer, ITicketFieldsUpdatedEventProducer ticketFieldsUpdatedProducer)
         {
             this._repo = _repo;
             this._reassignService = reassignService;
             this._stateChangedProducer = stateChangedProducer;
             this._ticketCreatedEventProducer = ticketCreatedEventProducer;
+            this._ticketFieldsUpdatedProducer = ticketFieldsUpdatedProducer;
         }
 
         public Ticket Create(string message)
@@ -96,6 +99,9 @@
 
             if (previous == null || previous.StateIsDifferent(model))
                 _ = this._stateChangedProducer.Produce(TicketStateChangedEventBody.BuildMessage(model));
+            var fieldsChanged = model.GetChanges(previous);
+            if(fieldsChanged?.Count() > 0)
+                _ = this._ticketFieldsUpdatedProducer.Produce(TicketFieldsUpdatedEventBody.BuildMessage(model, fieldsChanged));
 
             return model;
         }

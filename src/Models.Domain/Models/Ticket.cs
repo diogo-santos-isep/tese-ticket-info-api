@@ -97,7 +97,7 @@
             return new Ticket
             {
                 Subject = "Criado a partir de mensagem",
-                Description = message.Substring(0,100)
+                Description = message.Length > 100 ? message.Substring(0,100) : message
             };
         }
         public Ticket ForClient()
