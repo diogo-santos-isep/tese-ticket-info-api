@@ -7,7 +7,7 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public static class TicketFilterExtensions
+    public static class TicketNoteFilterExtensions
     {
         public static FilterDefinition<Ticket> BuildFilters(this TicketFilter filter)
         {
@@ -24,6 +24,16 @@
                 arr.Add(Builders<Ticket>.Filter.Empty);
             return Builders<Ticket>.Filter.And(arr);
         }
+        public static FilterDefinition<TicketNote> BuildFilters(this TicketNoteFilter filter)
+        {
+            var arr = new List<FilterDefinition<TicketNote>>();
+            if (!String.IsNullOrEmpty(filter.Ticket_Id))
+                arr.Add(Builders<TicketNote>.Filter.Eq(x => x.Ticket_Id, filter.Ticket_Id));
+            if (arr.Count == 0)
+                arr.Add(Builders<TicketNote>.Filter.Empty);
+            return Builders<TicketNote>.Filter.And(arr);
+        }
+
 
         public static SortDefinition<T> BuildSort<T>(this Filter filter)
         {

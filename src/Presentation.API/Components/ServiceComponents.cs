@@ -9,6 +9,7 @@
         {
             services.AddScoped<ITicketService, TicketService>();
             services.AddScoped<ITicketReassignService, TicketReassignService>();
+            services.AddScoped<ITicketNoteService, TicketNoteService>();
 
             return services;
         }

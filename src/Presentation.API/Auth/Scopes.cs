@@ -8,5 +8,6 @@
         public const string TicketListScope = "ticket.list";
         public const string TicketCreateScope = "ticket.create";
         public const string TicketClientScope = "ticket.client";
+        public const string TicketNotesScope = "ticket.notes";
     }
 }

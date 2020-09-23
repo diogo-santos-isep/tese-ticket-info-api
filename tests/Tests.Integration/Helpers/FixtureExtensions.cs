@@ -29,6 +29,14 @@
                 .Without(t => t.Id)
                 .Create();
         }
+        public static TicketNote GenerateTicketNote(this Fixture fixture)
+        {
+            return fixture.Build<TicketNote>()
+                .Without(t => t.Id)
+                .With(t => t.User_Id, ObjectId.GenerateNewId().ToString())
+                .With(t => t.Ticket_Id, ObjectId.GenerateNewId().ToString())
+                .Create();
+        }
 
     }
 }

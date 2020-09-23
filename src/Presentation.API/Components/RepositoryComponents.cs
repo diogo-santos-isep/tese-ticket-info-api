@@ -8,6 +8,7 @@
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
             services.AddScoped<ITicketRepository, TicketRepository>();
+            services.AddScoped<ITicketNoteRepository, TicketNoteRepository>();
 
             return services;
         }

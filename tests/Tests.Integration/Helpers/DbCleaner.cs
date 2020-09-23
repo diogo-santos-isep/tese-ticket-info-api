@@ -12,8 +12,10 @@ namespace Tests.Integration.Helpers
         internal static void Clean()
         {
             var _collection = DatabaseConnection.Current.Database.GetCollection<Ticket>("Tickets");
+            var _collectionNotes = DatabaseConnection.Current.Database.GetCollection<Ticket>("TicketNotes");
 
             _collection.DeleteMany(new BsonDocument());
+            _collectionNotes.DeleteMany(new BsonDocument());
         }
     }
 }
