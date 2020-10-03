@@ -29,3 +29,7 @@
 /src/Models.Filters/obj
 /src/Models.Filters/bin/Debug/netstandard2.0
 /src/Models.ViewModels/obj
+/tests/BLL.RabbitMQ.Producers.Tests/obj
+/tests/BLL.Services.Tests/obj
+/tests/DAL.Clients.Tests/obj
+/tests/DAL.Repositories.Tests/obj

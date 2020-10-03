@@ -1,5 +1,3 @@
-
-
 namespace Presentation.API
 {
     using Microsoft.AspNetCore.Builder;
