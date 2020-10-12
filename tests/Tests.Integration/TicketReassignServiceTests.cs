@@ -42,6 +42,7 @@
         [TestMethod]
         public async Task AssignTicket_Success()
         {
+            //Setup
             var ticket1 = this.fixture.GenerateTicket();
             ticket1.State = ETicketState.Created;
             ticket1 = this._ticketService.Create(ticket1);
@@ -49,16 +50,14 @@
             var collaborator = this.fixture.GenerateUser();
             this.userClientMock.Setup(x => x.GetCollaboratorsFromDepartment(It.IsAny<Department>())).ReturnsAsync(new List<User> { collaborator });
 
+            //Act
             await this._service.AssignTicket(ticket1).ConfigureAwait(false);
-            this.departmentClientMock.Verify(x => x.GetDefaultDepartment(), Times.Once);
-            this.ticketReassignedEventProducerMock.Verify(x => x.Produce(It.IsAny<TicketReassignedEventBody>()), Times.Once);
-            this.ticketStateChangedEventProducerMock.Verify(x => x.Produce(It.IsAny<TicketStateChangedEventBody>()), Times.Once);
 
+            //Assert
             var updatedTicket = this._ticketService.Get(ticket1.Id);
-            Assert.AreEqual(collaborator.Id, updatedTicket.CollaboratorId, "Collaborator is not the same");
-            Assert.AreEqual(collaborator.Name, updatedTicket.CollaboratorName, "Collaborator is not the same");
-            Assert.AreEqual(collaborator.Department_Id, updatedTicket.DepartmentId, "Department is not the same");
-            Assert.AreEqual(collaborator.Department_Description, updatedTicket.DepartmentDescription, "Collaborator is not the same");
+            Assert.AreEqual(collaborator.Id, updatedTicket.CollaboratorId, "Colaborador não foi atribuido");
+            Assert.AreEqual(collaborator.Department_Id, updatedTicket.DepartmentId, "Departamento não foi atribuido");
+            Assert.AreEqual(ETicketState.Assigned, updatedTicket.State, "Estado não foi alterado para atribuido");
         }
 
         [TestMethod]

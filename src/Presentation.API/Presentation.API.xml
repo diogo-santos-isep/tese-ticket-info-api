@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Presentation.API</name>
+    </assembly>
+    <members>
+        <member name="M:Presentation.API.Controllers.TicketController.GetAll">
+            <summary>
+            Gets All Tickets
+            | scope: ticket.list
+            </summary>
+            <returns>List of tickets</returns>
+        </member>
+        <member name="M:Presentation.API.Controllers.TicketController.Search(Models.Filters.TicketFilter)">
+            <summary>
+            Performs a Ticket Search
+            | scope: ticket.list
+            </summary>
+            <param name="filter">Filter</param>
+            <returns>A Grid containing a list and a count</returns>
+        </member>
+        <member name="M:Presentation.API.Controllers.TicketController.Search(System.String,Models.Filters.TicketFilter)">
+            <summary>
+            Performs a Ticket Search for Clients
+            | scope: ticket.client
+            </summary>
+            <param name="clientId">Client identifier</param>
+            <param name="filter">Filter</param>
+            <returns>A Grid containing a list and a count</returns>
+        </member>
+        <member name="M:Presentation.API.Controllers.TicketController.GetForClient(System.String)">
+            <summary>
+            Gets a Ticket For a Client
+            | scope: ticket.client
+            </summary>
+            <param name="id">Ticket identitifier</param>
+            <returns>Ticket</returns>
+        </member>
+        <member name="M:Presentation.API.Controllers.TicketController.Get(System.String)">
+            <summary>
+            Gets a ticket 
+            | scope: ticket
+            </summary>
+            <param name="id">Ticket identifier</param>
+            <returns>Ticket</returns>
+        </member>
+        <member name="M:Presentation.API.Controllers.TicketController.Create(Models.Domain.Models.Ticket)">
+            <summary>
+            Creates a ticket
+            | scope: ticket.create
+            </summary>
+            <param name="ticket"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Presentation.API.Controllers.TicketController.Create(System.String)">
+            <summary>
+            Creates a ticket from a message
+            | scope: ticket.create
+            </summary>
+            <param name="message">message</param>
+            <returns></returns>
+        </member>
+        <member name="M:Presentation.API.Controllers.TicketController.Update(System.String,Models.Domain.Models.Ticket)">
+            <summary>
+            Updates a ticket
+            | scope: ticket
+            </summary>
+            <param name="id">Ticket identifier</param>
+            <param name="ticket">Ticket</param>
+            <returns>Updated Ticket</returns>
+        </member>
+        <member name="M:Presentation.API.Controllers.TicketController.Delete(System.String)">
+            <summary>
+            Deletes a Ticket
+            | scope: ticket
+            | role: admin
+            </summary>
+            <param name="id">Ticket identifier</param>
+        </member>
+        <member name="M:Presentation.API.Controllers.TicketNotesController.Search(System.String,Models.Filters.TicketNoteFilter)">
+            <summary>
+            Performs a Search for Ticket Notes
+            | scope: ticket.notes
+            </summary>
+            <param name="ticket_id">ticket containing the notes</param>
+            <param name="filter">Filter</param>
+            <returns>A Grid containing a list and a count</returns>
+        </member>
+        <member name="M:Presentation.API.Controllers.TicketNotesController.Create(System.String,Models.Domain.Models.TicketNote)">
+            <summary>
+            Creates a Ticket Note
+            | scope: ticket.notes
+            </summary>
+            <param name="ticket_id">ticket containing the notes</param>
+            <param name="ticket">Filter</param>
+            <returns>Created Ticket Note</returns>
+        </member>
+        <member name="M:Presentation.API.Controllers.TicketReassignController.Create(System.String,Models.DTO.DTOs.TicketReassignDTO)">
+            <summary>
+            Reassigns ticket to the indicated collaborator and department.
+            | scope: ticket
+            </summary>
+            <param name="ticket_id">ticket to reassign</param>
+            <param name="ticketDTO">collaborator and department</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

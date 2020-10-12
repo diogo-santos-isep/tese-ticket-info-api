@@ -2,6 +2,7 @@
 {
     using BLL.RabbitMQ.Producers.Bodies;
     using BLL.RabbitMQ.Producers.Extensions;
+    using BLL.RabbitMQ.Producers.Helpers;
     using BLL.RabbitMQ.Producers.Interfaces;
     using global::RabbitMQ.Client;
     using Infrastructure.CrossCutting.Settings.Implementations;
@@ -10,17 +11,17 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public class TicketCreatedEventProducer : ITicketCreatedEventProducer
+    public class TicketReassignedEventProducer : ITicketReassignedEventProducer
     {
-        private readonly string QUEUENAME = "TicketCreatedQueue";
+        private readonly string QUEUENAME = "TicketReassignedQueue";
         private IConnectionFactory factory;
 
-        public TicketCreatedEventProducer(RabbitMQSettings settings)
+        public TicketReassignedEventProducer(RabbitMQSettings settings)
         {
             this.factory = settings.ToFactory();
         }
 
-        public async Task Produce(TicketCreatedEventBody message)
+        public async Task Produce(TicketReassignedEventBody message)
         {
             try
             {
@@ -40,12 +41,12 @@
                                          basicProperties: null,
                                          body: body);
 
-                    Console.WriteLine($"TicketCreatedEvent Message published with success!");
+                    Console.WriteLine($"TicketReassignedEvent Message published with success!");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Something Went Wrong Publishing TicketCreatedEvent! {ex.Message}");
+                Console.WriteLine($"Something Went Wrong Publishing TicketReassignedEvent! {ex.Message}");
             }
         }
     }

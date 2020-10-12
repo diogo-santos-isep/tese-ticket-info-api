@@ -1,5 +1,6 @@
 ﻿using Models.Domain.Enums;
 using Models.Domain.Models;
+using System;
 
 namespace Models.DTO.ViewModels
 {
@@ -8,6 +9,7 @@ namespace Models.DTO.ViewModels
         public string Id { get; set; }
         public string Code { get; set; }
         public string Subject { get; set; }
+        public DateTime Date { get; set; }
         public string Description { get; set; }
         public ETicketState State { get; set; }
         public string CollaboratorName { get; set; }
@@ -19,6 +21,7 @@ namespace Models.DTO.ViewModels
             this.Id = ticket.Id;
             this.Code = ticket.Code;
             this.Subject = ticket.Subject;
+            this.Date = ticket.Date;
             this.Description = ticket.Description;
             this.State = ticket.State;
             this.CollaboratorName = ticket.CollaboratorName;

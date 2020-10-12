@@ -19,6 +19,13 @@
             this._ticketService = ticketService;
         }
 
+        /// <summary>
+        /// Reassigns ticket to the indicated collaborator and department.
+        /// | scope: ticket
+        /// </summary>
+        /// <param name="ticket_id">ticket to reassign</param>
+        /// <param name="ticketDTO">collaborator and department</param>
+        /// <returns></returns>
         [HttpPost("/api/ticket/{ticket_id}/reassign")]
         [ScopeAndRoleAuthorization(Scopes.TicketScope)]
         public async Task<ActionResult> Create([FromRoute] string ticket_id, TicketReassignDTO ticketDTO)
