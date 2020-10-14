@@ -33,6 +33,20 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: DotNetCoreCLI@2
+  displayName: 'Unit Tests'
+  inputs:
+    command: test
+    projects: '**/*Tests/*.csproj'
+    arguments: '--configuration $(buildConfiguration) --filter TestCategory="Unit"'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Integration Tests'
+  inputs:
+    command: test
+    projects: '**/*Tests/*.csproj'
+    arguments: '--configuration $(buildConfiguration) --filter TestCategory="Integration"'
+
 - task: DotNetCoreCli@2
   displayName: 'dotnet publish $(buildConfiguration)'
   inputs:

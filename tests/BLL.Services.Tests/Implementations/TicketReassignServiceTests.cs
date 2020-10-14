@@ -33,6 +33,7 @@
         }
 
         [TestMethod()]
+        [TestCategory("Unit")]
         public async Task AssignTicket_Success()
         {
             var newTicket = this.GenerateTicket();
@@ -54,6 +55,7 @@
         }
 
         [TestMethod()]
+        [TestCategory("Unit")]
         public void GetMostFreeCollaborator_Test1_Success()
         {
             //Setup
@@ -86,6 +88,7 @@
         }
 
         [TestMethod()]
+        [TestCategory("Unit")]
         public void GetMostFreeCollaborator_Test2_Success()
         {
             //Setup
@@ -118,6 +121,7 @@
         }
 
         [TestMethod()]
+        [TestCategory("Unit")]
         public void GetMostFreeCollaborator_Test3_Success()
         {
             //Setup

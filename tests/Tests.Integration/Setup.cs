@@ -9,14 +9,14 @@
         [AssemblyInitialize]
         public static void Initialize(TestContext context)
         {
-            Configurations.Init();
-            DatabaseConnection.Init(Configurations.Current.MongoDBConnection);
+            //Configurations.Init();
+            //DatabaseConnection.Init(Configurations.Current.MongoDBConnection);
         }
 
         [AssemblyCleanup]
         public static void Cleanup()
         {
-            DbCleaner.Clean();
+            //DbCleaner.Clean();
         }
     }
 }

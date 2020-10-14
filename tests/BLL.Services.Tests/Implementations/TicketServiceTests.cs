@@ -33,6 +33,7 @@
         }
 
         [TestMethod()]
+        [TestCategory("Unit")]
         public void Create_Success()
         {
             var newTicket = this.GenerateTicket();
@@ -47,6 +48,7 @@
         }
 
         [TestMethod()]
+        [TestCategory("Unit")]
         public void Delete_Success()
         {
             var newTicket = this.GenerateTicket();
@@ -56,6 +58,7 @@
         }
 
         [TestMethod()]
+        [TestCategory("Unit")]
         public void Get_Success()
         {
             var id = this.fixture.Create<string>();
@@ -65,6 +68,7 @@
         }
 
         [TestMethod()]
+        [TestCategory("Unit")]
         public void SearchForClient_Success()
         {
             var newTicket = this.GenerateTicket();
@@ -77,6 +81,7 @@
         }
 
         [TestMethod()]
+        [TestCategory("Unit")]
         public void Search_Success()
         {
             var newTicket = this.GenerateTicket();
@@ -88,6 +93,7 @@
         }
 
         [TestMethod()]
+        [TestCategory("Unit")]
         public void Update_Success()
         {
             var newTicket = this.GenerateTicket();
@@ -103,6 +109,7 @@
         }
 
         [TestMethod()]
+        [TestCategory("Unit")]
         public void Update_WithStateChanges_Success()
         {
             var newTicket = this.GenerateTicket();

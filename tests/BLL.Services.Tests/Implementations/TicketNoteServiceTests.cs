@@ -21,6 +21,7 @@
         }
 
         [TestMethod()]
+        [TestCategory("Unit")]
         public void Create_Success()
         {
             var model = this.fixture.Create<TicketNote>();
@@ -30,6 +31,7 @@
         }
 
         [TestMethod()]
+        [TestCategory("Unit")]
         public void Search_Success()
         {
             var filter = this.fixture.Create<TicketNoteFilter>();
