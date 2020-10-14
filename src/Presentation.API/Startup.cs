@@ -7,7 +7,6 @@ namespace Presentation.API
     using Microsoft.Extensions.Hosting;
     using Microsoft.Extensions.Logging;
     using Microsoft.IdentityModel.Tokens;
-    using Microsoft.OpenApi.Models;
     using Presentation.API.Components;
     using Presentation.API.Handlers;
     using System;
@@ -58,22 +57,22 @@ namespace Presentation.API
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo
-                {
-                    Version = "v1",
-                    Title = "Ticket Info Api",
-                    Description = "Api to manage tickets",
-                    Contact = new OpenApiContact
-                    {
-                        Name = "Diogo Santos",
-                        Email = "1140294@isep.ipp.pt",
-                    },
-                    License = new OpenApiLicense
-                    {
-                        Name = "Use under LICX",
-                        Url = new Uri("https://example.com/license"),
-                    }
-                });
+                //c.SwaggerDoc("v1", new OpenApiInfo
+                //{
+                //    Version = "v1",
+                //    Title = "Ticket Info Api",
+                //    Description = "Api to manage tickets",
+                //    Contact = new OpenApiContact
+                //    {
+                //        Name = "Diogo Santos",
+                //        Email = "1140294@isep.ipp.pt",
+                //    },
+                //    License = new OpenApiLicense
+                //    {
+                //        Name = "Use under LICX",
+                //        Url = new Uri("https://example.com/license"),
+                //    }
+                //});
 
                 // Set the comments path for the Swagger JSON and UI.**
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
