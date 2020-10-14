@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Infrastructure.CrossCutting\Infrastructure.CrossCutting.csproj" />
     <ProjectReference Include="..\Models.Domain\Models.Domain.csproj" />
+    <ProjectReference Include="..\Models.Filters\Models.Filters.csproj" />
   </ItemGroup>
 
 </Project>

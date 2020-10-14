@@ -1,12 +1,12 @@
-﻿namespace Presentation.API.Helpers
+﻿namespace Infrastructure.CrossCutting
 {
-    using Infrastructure.CrossCutting.Settings.Interfaces;
+    using Infrastructure.CrossCutting.Settings.Implementations;
     using MongoDB.Driver;
     using System;
 
     public static  class MongoDBConnecter
     {
-        public static IMongoDatabase Connect(this IMongoDBConnection settings)
+        public static IMongoDatabase Connect(this MongoDBConnection settings)
         {
             try
             {

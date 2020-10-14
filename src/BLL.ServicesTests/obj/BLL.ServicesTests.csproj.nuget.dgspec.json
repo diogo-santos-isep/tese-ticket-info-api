@@ -1,0 +1,646 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\BLL.ServicesTests\\BLL.ServicesTests.csproj": {}
+  },
+  "projects": {
+    "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\BLL.RabbitMQ.Producers\\BLL.RabbitMQ.Producers.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\BLL.RabbitMQ.Producers\\BLL.RabbitMQ.Producers.csproj",
+        "projectName": "BLL.RabbitMQ.Producers",
+        "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\BLL.RabbitMQ.Producers\\BLL.RabbitMQ.Producers.csproj",
+        "packagesPath": "C:\\Users\\Dgms_\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\BLL.RabbitMQ.Producers\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dgms_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Infrastructure.CrossCutting\\Infrastructure.CrossCutting.csproj": {
+                "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Infrastructure.CrossCutting\\Infrastructure.CrossCutting.csproj"
+              },
+              "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Domain\\Models.Domain.csproj": {
+                "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Domain\\Models.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[5.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\BLL.ServicesTests\\BLL.ServicesTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\BLL.ServicesTests\\BLL.ServicesTests.csproj",
+        "projectName": "BLL.ServicesTests",
+        "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\BLL.ServicesTests\\BLL.ServicesTests.csproj",
+        "packagesPath": "C:\\Users\\Dgms_\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\BLL.ServicesTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dgms_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\BLL.Services\\BLL.Services.csproj": {
+                "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\BLL.Services\\BLL.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.5.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\BLL.Services\\BLL.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\BLL.Services\\BLL.Services.csproj",
+        "projectName": "BLL.Services",
+        "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\BLL.Services\\BLL.Services.csproj",
+        "packagesPath": "C:\\Users\\Dgms_\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\BLL.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dgms_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\BLL.RabbitMQ.Producers\\BLL.RabbitMQ.Producers.csproj": {
+                "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\BLL.RabbitMQ.Producers\\BLL.RabbitMQ.Producers.csproj"
+              },
+              "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\DAL.Clients\\DAL.Clients.csproj": {
+                "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\DAL.Clients\\DAL.Clients.csproj"
+              },
+              "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\DAL.Repositories\\DAL.Repositories.csproj": {
+                "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\DAL.Repositories\\DAL.Repositories.csproj"
+              },
+              "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Domain\\Models.Domain.csproj": {
+                "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Domain\\Models.Domain.csproj"
+              },
+              "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.DTO\\Models.DTO.csproj": {
+                "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.DTO\\Models.DTO.csproj"
+              },
+              "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Filters\\Models.Filters.csproj": {
+                "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Filters\\Models.Filters.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\DAL.Clients\\DAL.Clients.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\DAL.Clients\\DAL.Clients.csproj",
+        "projectName": "DAL.Clients",
+        "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\DAL.Clients\\DAL.Clients.csproj",
+        "packagesPath": "C:\\Users\\Dgms_\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\DAL.Clients\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dgms_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Infrastructure.CrossCutting\\Infrastructure.CrossCutting.csproj": {
+                "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Infrastructure.CrossCutting\\Infrastructure.CrossCutting.csproj"
+              },
+              "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Domain\\Models.Domain.csproj": {
+                "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Domain\\Models.Domain.csproj"
+              },
+              "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.DTO\\Models.DTO.csproj": {
+                "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.DTO\\Models.DTO.csproj"
+              },
+              "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Filters\\Models.Filters.csproj": {
+                "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Filters\\Models.Filters.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "IdentityModel": {
+              "target": "Package",
+              "version": "[4.4.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[4.7.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\DAL.Repositories\\DAL.Repositories.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\DAL.Repositories\\DAL.Repositories.csproj",
+        "projectName": "DAL.Repositories",
+        "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\DAL.Repositories\\DAL.Repositories.csproj",
+        "packagesPath": "C:\\Users\\Dgms_\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\DAL.Repositories\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dgms_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Infrastructure.CrossCutting\\Infrastructure.CrossCutting.csproj": {
+                "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Infrastructure.CrossCutting\\Infrastructure.CrossCutting.csproj"
+              },
+              "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Domain\\Models.Domain.csproj": {
+                "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Domain\\Models.Domain.csproj"
+              },
+              "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Filters\\Models.Filters.csproj": {
+                "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Filters\\Models.Filters.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.11.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Infrastructure.CrossCutting\\Infrastructure.CrossCutting.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Infrastructure.CrossCutting\\Infrastructure.CrossCutting.csproj",
+        "projectName": "Infrastructure.CrossCutting",
+        "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Infrastructure.CrossCutting\\Infrastructure.CrossCutting.csproj",
+        "packagesPath": "C:\\Users\\Dgms_\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Infrastructure.CrossCutting\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dgms_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.11.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[5.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Domain\\Models.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Domain\\Models.Domain.csproj",
+        "projectName": "Models.Domain",
+        "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Domain\\Models.Domain.csproj",
+        "packagesPath": "C:\\Users\\Dgms_\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dgms_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Infrastructure.CrossCutting\\Infrastructure.CrossCutting.csproj": {
+                "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Infrastructure.CrossCutting\\Infrastructure.CrossCutting.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.11.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.DTO\\Models.DTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.DTO\\Models.DTO.csproj",
+        "projectName": "Models.DTO",
+        "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.DTO\\Models.DTO.csproj",
+        "packagesPath": "C:\\Users\\Dgms_\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.DTO\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dgms_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Domain\\Models.Domain.csproj": {
+                "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Domain\\Models.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Filters\\Models.Filters.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Filters\\Models.Filters.csproj",
+        "projectName": "Models.Filters",
+        "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Filters\\Models.Filters.csproj",
+        "packagesPath": "C:\\Users\\Dgms_\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Filters\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dgms_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Domain\\Models.Domain.csproj": {
+                "projectPath": "C:\\Projetos\\Tese\\tese-ticket-info-api\\src\\Models.Domain\\Models.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

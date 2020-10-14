@@ -1,12 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BLL.RabbitMQ.Producers\BLL.RabbitMQ.Producers.csproj" />
+    <ProjectReference Include="..\DAL.Clients\DAL.Clients.csproj" />
     <ProjectReference Include="..\DAL.Repositories\DAL.Repositories.csproj" />
     <ProjectReference Include="..\Models.Domain\Models.Domain.csproj" />
+    <ProjectReference Include="..\Models.DTO\Models.DTO.csproj" />
+    <ProjectReference Include="..\Models.Filters\Models.Filters.csproj" />
   </ItemGroup>
 
 </Project>
