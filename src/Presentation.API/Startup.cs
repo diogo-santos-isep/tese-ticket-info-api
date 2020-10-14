@@ -55,30 +55,30 @@ namespace Presentation.API
             }));
 
             // Register the Swagger generator, defining 1 or more Swagger documents
-            services.AddSwaggerGen(c =>
-            {
-                //c.SwaggerDoc("v1", new OpenApiInfo
-                //{
-                //    Version = "v1",
-                //    Title = "Ticket Info Api",
-                //    Description = "Api to manage tickets",
-                //    Contact = new OpenApiContact
-                //    {
-                //        Name = "Diogo Santos",
-                //        Email = "1140294@isep.ipp.pt",
-                //    },
-                //    License = new OpenApiLicense
-                //    {
-                //        Name = "Use under LICX",
-                //        Url = new Uri("https://example.com/license"),
-                //    }
-                //});
+            //services.AddSwaggerGen(c =>
+            //{
+            //    //c.SwaggerDoc("v1", new OpenApiInfo
+            //    //{
+            //    //    Version = "v1",
+            //    //    Title = "Ticket Info Api",
+            //    //    Description = "Api to manage tickets",
+            //    //    Contact = new OpenApiContact
+            //    //    {
+            //    //        Name = "Diogo Santos",
+            //    //        Email = "1140294@isep.ipp.pt",
+            //    //    },
+            //    //    License = new OpenApiLicense
+            //    //    {
+            //    //        Name = "Use under LICX",
+            //    //        Url = new Uri("https://example.com/license"),
+            //    //    }
+            //    //});
 
-                // Set the comments path for the Swagger JSON and UI.**
-                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                c.IncludeXmlComments(xmlPath);
-            });
+            //    // Set the comments path for the Swagger JSON and UI.**
+            //    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            //    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+            //    c.IncludeXmlComments(xmlPath);
+            //});
 
             services.AddControllers();
         }
@@ -105,11 +105,11 @@ namespace Presentation.API
                 endpoints.MapControllers();
             });
 
-            app.UseSwagger(); 
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-            });
+            //app.UseSwagger(); 
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            //});
         }
     }
 }
